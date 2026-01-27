@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Master</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="images/logo.svg" alt="">
+        </div>
+
+        <ul class="nav-links">
+            <li><a class="hover-text" href="#home">Home</a></li>
+            <li><a class="hover-text" href="#tools">Tools</a></li>
+            <li><a class="hover-text" href="#about">About us</a></li>
+            <li><a class="hover-text" href="#pricing">Pricing</a></li>
+            <li><a class="hover-text" href="#login">Login</a></li>
+            <li><a class="btn-try" href="#try">Try for free →</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section class="video-section" id="home">
+        <!-- Background Video (replace with your actual video) -->
+        <video paused loop muted playsinline class="back-video">
+            <source src="images/intro-vid.mp4" type="video/mp4">
+
+        </video>
+
+        <!-- Content Overlay -->
+        <div class="content-overlay">
+            <div class="headline">
+                <span>Master the Monster of</span>
+                <div class="scroller">
+                    <div class="scroller-inner">
+                        <span>Lip-Sync.</span>
+                        <span>Translating.</span>
+                        <span>Dubbing.</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="subtitle">
+                Powered by our revolutionary VisualDub AI technology, Syncmonster simplifies dubbing by perfectly
+                syncing lips and translates your video to any language.
+            </p>
+
+            <button class="cta-button">
+                See the magic for yourself
+                <img class="magic-wand" src="images/magic-wand.gif" alt="Magic Wand">
+            </button>
+
+        </div>
+    </section>
+    <!--Section 2-->
+    <section class="container2">
+        <!-- Logos Row -->
+        <div class="many-logos">
+            <div class="logo-height">
+                <img class="logos" src="images/mediamonks_logo.svg" alt="Media Monks Logo">
+            </div>
+            <div class="logo-height">
+                <img class="logos" src="images/cocacola_logo.svg" alt="Coca Cola Logo">
+            </div>
+            <div class="logo-height">
+                <img class="logos" src="images/ogilvy_logo.svg" alt="Ogilvy Logo">
+            </div>
+            <div class="logo-height">
+                <img class="logos" src="images/itc_logo.svg" alt="ITC Logo">
+            </div>
+            <div class="logo-height">
+                <img class="logos" src="images/publicisgroupe_logo.svg" alt="Publicis Groupe Logo">
+            </div>
+            <div class="logo-height">
+                <img class="logos" src="images/amazon_logo.svg" alt="Amazon Logo">
+            </div>
+            <div class="logo-height">
+                <img class="logos" src="images/wipro_logo.svg" alt="Wipro Logo">
+            </div>
+            <div class="logo-height">
+                <img class="logos" src="images/piramal_logo.svg" alt="Piramal Logo">
+            </div>
+        </div>
+
+        <!-- Heading Below -->
+        <h2 class="section2-heading">
+            There is a monster for every need.
+        </h2>
+    </section>
+
+    <section class="container3">
+        <div class="two-video">
+
+            <!-- Blitz Card -->
+            <div class="video-card">
+                <video autoplay loop muted playsinline class="card-video">
+                    <source src="images/blitz_video.mp4" type="video/mp4">
+                </video>
+                <div class="card-overlay">
+                    <!-- Always visible content -->
+                    <div class="card-content-visible">
+                        <img src="images/blitz-logo.png" alt="Blitz Logo" class="circle-logo">
+                        <p class="card-description">Get lightning-fast dubbing with SyncMonster Blitz</p>
+                    </div>
+
+                    <!-- Hidden content - reveals on hover -->
+                    <div class="card-content-hidden">
+                        <ul class="feature-list">
+                            <li>Effortlessly upload your video and select your language</li>
+                            <li>AI-powered dubbing and lip sync for precise results</li>
+                            <li>Quick and easy transformation for your content!</li>
+                        </ul>
+                    </div>
+
+                    <!-- Button at bottom - appears on hover -->
+                    <a href="#" class="card-cta-button">Try now →</a>
+                </div>
+            </div>
+
+            <!-- Pro Card -->
+            <div class="video-card">
+                <video autoplay loop muted playsinline class="card-video">
+                    <source src="images/pro_video.mp4" type="video/mp4">
+                </video>
+                <div class="card-overlay">
+                    <!-- Always visible content -->
+                    <div class="card-content-visible">
+                        <img src="images/pro-logo.png" alt="Pro Logo" class="circle-logo">
+                        <p class="card-description">Experience professional editing with SyncMonster Pro</p>
+                    </div>
+
+                    <!-- Hidden content - reveals on hover -->
+                    <div class="card-content-hidden">
+                        <ul class="feature-list">
+                            <li>Comprehensive features: timeline, media library, scene detection, face tracking</li>
+                            <li>Easily fine-tune every aspect of lip syncing for multilingual perfection</li>
+                            <li>Simple enough for beginners, powerful enough for professionals</li>
+                        </ul>
+                    </div>
+
+                    <!-- Button at bottom - appears on hover -->
+                    <a href="#" class="card-cta-button">View pricing plans →</a>
+                </div>
+            </div>
+
+        </div>
+        <h2 class="section2-heading">
+            Unleash unstoppable power and precision.
+        </h2>
+    </section>
+
+    <section class="container4">
+        <div class="slider-wrapper">
+
+            <!-- Number Navigation (Left Side) -->
+            <div class="slider-numbers">
+                <div class="number-item active" data-slide="0">
+                    <span>1</span>
+                </div>
+                <div class="number-item" data-slide="1">
+                    <span>2</span>
+                </div>
+                <div class="number-item" data-slide="2">
+                    <span>3</span>
+                </div>
+                <div class="number-item" data-slide="3">
+                    <span>4</span>
+                </div>
+                <div class="number-item" data-slide="4">
+                    <span>5</span>
+                </div>
+            </div>
+
+            <!-- Slides Container -->
+            <div class="slides-container">
+
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-content-left">
+                        <h2>No Reshoots. Just Perfect Dialogue. Let AI do the rest!</h2>
+                        <p>With syncmonster on your production team, you can seamlessly and accurately change dialogue
+                            without the need for reshoots—that's the power of Gen AI!</p>
+                    </div>
+                    <div class="slide-content-right">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/video-1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-content-left">
+                        <h2>Lip-sync multiple faces simultaneously for a more efficient workflow.</h2>
+                        <p>With syncmonster on your production team, you can seamlessly and accurately change dialogue
+                            without the need for reshoots—that's the power of Gen AI!</p>
+                    </div>
+                    <div class="slide-content-right">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/video-2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-content-left">
+                        <h2>Live action to 3d animation - realistic dubbing for any content</h2>
+                        <p>With syncmonster on your production team, you can seamlessly and accurately change dialogue
+                            without the need for reshoots—that's the power of Gen AI!</p>
+                    </div>
+                    <div class="slide-content-right">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/video-3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="slide-content-left">
+                        <h2>Ensure realistic dubbing without compromising authenticity</h2>
+                        <p>With syncmonster on your production team, you can seamlessly and accurately change dialogue
+                            without the need for reshoots—that's the power of Gen AI!</p>
+                    </div>
+                    <div class="slide-content-right">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/video-4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <div class="slide-content-left">
+                        <h2>Reach a Global audience with access to over 35 languages</h2>
+                        <p>SyncMonster ensures your content transcends borders, effectively connecting with diverse
+                            cultures and regions.</p>
+                    </div>
+                    <div class="slide-content-right">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/video-5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation Arrows (Optional) -->
+            <!-- <button class="slider-arrow prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" />
+                </svg>
+            </button>
+            <button class="slider-arrow next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" />
+                </svg>
+            </button> -->
+
+        </div>
+    </section>
+
+    <section class="container5">
+        <div class="killer-content-img">
+            <!-- Background Layer -->
+            <video autoplay loop muted playsinline class="killer-video">
+                <source src="images/killer-content-video.mp4" type="video/mp4">
+            </video>
+
+            <!-- The Content Overlay (The "In-front" Layer) -->
+            <div class="killer-overlay">
+
+                <!-- Tier 1: Header -->
+                <header class="killer-header">
+                    <h2>Killer content, monster savings.</h2>
+                </header>
+
+                <!-- Tier 2: Comparison Section (The Complex Part) -->
+                <div class="comparison-grid">
+
+                    <!-- Left Column: Old Way -->
+                    <div class="side-old">
+                        <h3>Reshooting in a new language</h3>
+
+                        <div class="bar-container">
+                            <div class="bar gray-bar" style="width: 80%;"></div>
+                        </div>
+                        <span class="stat-label">$75 to $150</span>
+
+
+                        <div class="bar-container">
+                            <div class="bar gray-bar" style="width: 60%;"></div>
+                        </div>
+
+                        <span class="stat-label">Up to 4 weeks</span>
+
+                    </div>
+
+                    <!-- Center Column: Labels (Total cost / Time spent) -->
+                    <div class="side-labels">
+                        <div class="label-group">
+                            <p>Total cost</p>
+                            <span>per minute</span>
+                        </div>
+                        <div class="label-group">
+                            <p>Time spent</p>
+                            <span>for a 90 min movie</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: The "Monster" Way (SyncMonster) -->
+                    <div class="side-new">
+                        <h3>Lip-syncing</h3>
+
+                        <div class="bar-container">
+                            <div class="bar light-green-bar" style="width: 50%;"></div>
+                            <div class="bar green-bar" style="width: 40%;"></div>
+                        </div>
+                        <div class="stat-group">
+                            <span class="stat-label highlight">$10 to $75</span>
+                            <span class="savings-tag">30 to 50% cheaper</span>
+                        </div>
+
+
+                        <div class="bar-container">
+
+                            <div class="bar green-bar" style="width: 20%;"></div>
+                        </div>
+                        <div class="stat-group">
+                            <span class="stat-label highlight">within 1 week</span>
+                            <span class="savings-tag">50 to 70% faster</span>
+                        </div>
+                    </div>
+
+                </div> <!-- End comparison-grid -->
+
+                <!-- Tier 3: Footer Stats (The 3 Cards) -->
+                <div class="stats-footer">
+                    <div class="stat-card">
+                        <h4>1 Billion +</h4>
+                        <p>Training data points</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>35+</h4>
+                        <p>Languages</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>1.5 Million+</h4>
+                        <p>Footage dubbed</p>
+                    </div>
+                </div>
+
+            </div> <!-- End killer-overlay -->
+        </div>
+    </section>
+
+
+    <!------------------------------------------------------Testing -------------------------------------------------->
+
+    <section class="container5">
+        <div class="killer-content-img">
+            <!-- Background Layer -->
+            <video autoplay loop muted playsinline class="killer-video">
+                <source src="images/killer-content-video.mp4" type="video/mp4">
+            </video>
+
+            <!-- The Content Overlay (The "In-front" Layer) -->
+            <div class="killer-overlay">
+
+                <!-- Tier 1: Header -->
+                 <div class="killer-wrapper">
+<header class="killer-header">
+                    <h2>Killer content, monster savings.</h2>
+                </header>
+
+            <!--------------------------------Range----------------->
+            <div class="side-old">
+                        <h3>Reshooting in a new language</h3>
+
+                        <div class="bar-container">
+                            <div class="bar gray-bar" style="width: 80%;"></div>
+                        </div>
+                        <span class="stat-label">$75 to $150</span>
+
+                    </div>
+                 </div>
+                <div class="killer-wrapper-middle">
+                    
+
+                </div>
+
+                <!-- Tier 2: Comparison Section (The Complex Part) -->
+                <div class="comparison-grid">
+
+                    <!-- Left Column: Old Way -->
+                    
+
+                    <!-- Center Column: Labels (Total cost / Time spent) -->
+                    <div class="side-labels">
+                        <div class="label-group">
+                            <p>Total cost</p>
+                            <span>per minute</span>
+                        </div>
+                        <div class="label-group">
+                            <p>Time spent</p>
+                            <span>for a 90 min movie</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: The "Monster" Way (SyncMonster) -->
+                    <div class="side-new">
+                        <h3>Lip-syncing</h3>
+
+                        <div class="bar-container">
+                            <div class="bar light-green-bar" style="width: 50%;"></div>
+                            <div class="bar green-bar" style="width: 40%;"></div>
+                        </div>
+                        <div class="stat-group">
+                            <span class="stat-label highlight">$10 to $75</span>
+                            <span class="savings-tag">30 to 50% cheaper</span>
+                        </div>
+
+
+                        <div class="bar-container">
+
+                            <div class="bar green-bar" style="width: 20%;"></div>
+                        </div>
+                        <div class="stat-group">
+                            <span class="stat-label highlight">within 1 week</span>
+                            <span class="savings-tag">50 to 70% faster</span>
+                        </div>
+                    </div>
+
+                </div> <!-- End comparison-grid -->
+
+                <!-- Tier 3: Footer Stats (The 3 Cards) -->
+                <div class="stats-footer">
+                    <div class="stat-card">
+                        <h4>1 Billion +</h4>
+                        <p>Training data points</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>35+</h4>
+                        <p>Languages</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>1.5 Million+</h4>
+                        <p>Footage dubbed</p>
+                    </div>
+                </div>
+
+            </div> <!-- End killer-overlay -->
+        </div>
+    </section>
+
+    <!------------------------------------------------------Testing -------------------------------------------------->
+
+    <section class="container6">
+
+        <div>
+            <div>
+                <h2 class="section2-heading">
+                    Everyone loves the monster!
+                </h2>
+            </div>
+            <div>
+                <p class="subtitle">
+                    VisualDub, the driving force behind SyncMonster, has earned numerous awards and recognitions for its
+                    cutting-edge AI technology. Here's a look at some of our most proud achievements.
+                </p>
+            </div>
+            <div class="logo-wrapper">
+
+
+                <div class="six-logos">
+                    <div class="img-height">
+                        <img src="images/disrupt-logo.png" alt="">
+                    </div>
+
+                    <p class="subtitle-logos">
+                        Startup Battlefield </br>
+                        2024
+                    </p>
+                </div>
+                <div class="six-logos">
+                    <div class="img-height">
+                        <img src="images/google-logo.png" alt="">
+                    </div>
+                    <p class="subtitle-logos">
+                        Google for Startups</br>
+                        Accelerator: AI First
+                    </p>
+                </div>
+                <div class="six-logos">
+                    <div class="img-height">
+                        <img src="images/yourstory-logo.png" alt="">
+                    </div>
+                    <p class="subtitle-logos">
+                        2nd prize in</br>
+                        TechSparks 2023
+                    </p>
+                </div>
+                <div class="six-logos">
+                    <div class="img-height">
+                        <div class="img-height">
+                            <img src="images/aws-logo.png" alt="">
+                        </div>
+                    </div>
+                    <p class="subtitle-logos">
+                        GenAI Accelerator</br>
+                        Program
+                    </p>
+                </div>
+                <div class="six-logos">
+                    <div class="img-height">
+                        <img src="images/big-bang-logo.png" alt="">
+                    </div>
+                    <p class="subtitle-logos">
+                        Top Tech Disrupters </br>
+                        2024
+                    </p>
+                </div>
+                <div class="six-logos">
+                    <div class="img-height">
+                        <img src="images/Nasscom-logo.png" alt="">
+                    </div>
+                    <p class="subtitle-logos">
+                        Ranked no.1 in media </br> and telecom company.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="container7">
+        <div class="testimonials">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/image1.png" alt="">
+
+                    </div>
+                    <div class="img-content">
+                        <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                        <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                        <h3>Francis Towne</h3>
+                        <p>Travel influencer</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/image2.png" alt="">
+                    </div>
+                    <div class="img-content">
+                        <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                        <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                        <h3>Francis Towne</h3>
+                        <p>Travel influencer</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="many-logos">
+                <div class="logo-height">
+                    <img class="logos" src="images/mediamonks_logo.svg" alt="Media Monks Logo">
+                </div>
+                <div class="logo-height">
+                    <img class="logos" src="images/cocacola_logo.svg" alt="Coca Cola Logo">
+                </div>
+                <div class="logo-height">
+                    <img class="logos" src="images/ogilvy_logo.svg" alt="Ogilvy Logo">
+                </div>
+                <div class="logo-height">
+                    <img class="logos" src="images/itc_logo.svg" alt="ITC Logo">
+                </div>
+                <div class="logo-height">
+                    <img class="logos" src="images/publicisgroupe_logo.svg" alt="Publicis Groupe Logo">
+                </div>
+                <div class="logo-height">
+                    <img class="logos" src="images/amazon_logo.svg" alt="Amazon Logo">
+                </div>
+                <div class="logo-height">
+                    <img class="logos" src="images/wipro_logo.svg" alt="Wipro Logo">
+                </div>
+                <div class="logo-height">
+                    <img class="logos" src="images/piramal_logo.svg" alt="Piramal Logo">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="container8" id="pricing">
+        <div>
+            <h2 class="section2-heading">
+                Flexible plans for all your needs.
+            </h2>
+        </div>
+        <div class="pricing">
+            <div class="header-price">
+                <div class="plan onclick-text active">
+                    <h2>Monthly plan</h2>
+                </div>
+                <div class="plan onclick-text">
+                    <h2>Annual plan</h2>
+                    <p>Save up-to 24%</p>
+                </div>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card free">
+                    <div class="card-top">
+                        <h3>Free</h3>
+                        <p class="desc">
+                            For pros who demand a killer arsenal to nail every lip-sync flawlessly.
+                        </p>
+
+                        <span class="badge">1 User</span>
+
+                        <div class="price">
+                            <h2>$0<span>/month</span></h2>
+
+                        </div>
+
+                        <button class="btn primary">Try now</button>
+                    </div>
+
+                    <div class="card-bottom">
+                        <ul>
+                            <li>
+                                <span class="label">Max duration of video</span>
+                                <span class="value">30 sec</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Max resolution</span>
+                                <span class="value">1080</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Videos you can render</span>
+                                <span class="value">3</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Credits on purchase</span>
+                                <span class="value">-</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Process time</span>
+                                <span class="value">Slow</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Watermark</span>
+                                <span class="value">Yes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="pricing-card popular">
+
+
+                    <div class="card-top">
+                        <h3>Blitz <span class="popular-badge">Popular</span></h3>
+                        <p class="desc">For pros who demand a killer arsenal to nail every lip-sync flawlessly.</p>
+
+                        <span class="badge">1 User</span>
+
+                        <div class="price">
+                            <h2>$50<span>/month</span></h2>
+
+                        </div>
+
+                        <button class="btn primary">Buy now</button>
+                    </div>
+
+                    <div class="card-bottom">
+                        <ul>
+                            <li>
+                                <span class="label">Max duration</span>
+                                <span class="value">600 sec</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Videos</span>
+                                <span class="value">Unlimited</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Process time</span>
+                                <span class="value">Turbo</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Blitz interface</span>
+                                <span class="value">Yes</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Watermark</span>
+                                <span class="value">No</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Support</span>
+                                <span class="value">Yes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="pricing-card dark">
+                    <div class="card-top">
+                        <h3>Pro</h3>
+                        <p class="desc">For pros who demand a killer arsenal to nail every lip-sync flawlessly.</p>
+
+                        <span class="badge">2 Users</span>
+
+                        <div class="price">
+                            <h2>$175<span>/month</span></h2>
+                            <p class="note">More than 4 users? <a href="#">Contact us</a></p>
+
+                        </div>
+
+
+                        <button class="btn primary">Buy now</button>
+                    </div>
+
+                    <div class="card-bottom">
+                        <ul>
+                            <li>
+                                <span class="label">Max duration</span>
+                                <span class="value">1000 sec</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Resolution</span>
+                                <span class="value">4K</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Multi-person lip sync</span>
+                                <span class="value">Yes</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Pro interface</span>
+                                <span class="value">Yes</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Watermark</span>
+                                <span class="value">No</span>
+                            </li>
+
+                            <li>
+                                <span class="label">Support</span>
+                                <span class="value">Yes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="talk-to-us">
+            <img src="images/talk-logo.svg" class="talk-logo" alt="background image">
+
+            <div class="inner-talk">
+                <h2>Can’t find the right plan for your needs?</h2>
+                <button class="btn primary talk-btn">Talk to us</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container9">
+
+
+        <div class="faq">
+            <h2 class="section2-heading">Frequently Asked Questions</h2>
+
+            <div class="layout">
+                <!-- FAQ Item 1 -->
+                <div class="accordion">
+                    <div class="accordion__question">
+                        <p>How does this technology work?</p>
+                        <!-- Plus Icon SVG -->
+                        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="accordion__answer">
+                        <div class="answer-content">
+                            SyncMonster is an AI-powered dubbing tool that allows you to seamlessly dub videos into
+                            different languages while automatically adjusting the speaker's lip movement to match the
+                            new audio. Whether you're a content creator or an agency, SyncMonster simplifies the process
+                            of creating multilingual content without reshoots or tedious editing.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion">
+                    <div class="accordion__question">
+                        <p>What's the difference between Blitz and Pro?</p>
+                        <!-- Plus Icon SVG -->
+                        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="accordion__answer">
+                        <div class="answer-content">
+                            SyncMonster is an AI-powered dubbing tool that allows you to seamlessly dub videos into
+                            different languages while automatically adjusting the speaker's lip movement to match the
+                            new audio. Whether you're a content creator or an agency, SyncMonster simplifies the process
+                            of creating multilingual content without reshoots or tedious editing.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion">
+                    <div class="accordion__question">
+                        <p>Can SyncMonster be used for long-form content?</p>
+                        <!-- Plus Icon SVG -->
+                        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="accordion__answer">
+                        <div class="answer-content">
+                            SyncMonster is an AI-powered dubbing tool that allows you to seamlessly dub videos into
+                            different languages while automatically adjusting the speaker's lip movement to match the
+                            new audio. Whether you're a content creator or an agency, SyncMonster simplifies the process
+                            of creating multilingual content without reshoots or tedious editing.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion">
+                    <div class="accordion__question">
+                        <p>How many languages does SyncMonster support?</p>
+                        <!-- Plus Icon SVG -->
+                        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="accordion__answer">
+                        <div class="answer-content">
+                            SyncMonster is an AI-powered dubbing tool that allows you to seamlessly dub videos into
+                            different languages while automatically adjusting the speaker's lip movement to match the
+                            new audio. Whether you're a content creator or an agency, SyncMonster simplifies the process
+                            of creating multilingual content without reshoots or tedious editing.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion">
+                    <div class="accordion__question">
+                        <p>Does SyncMonster support custom enterprise solutions?</p>
+                        <!-- Plus Icon SVG -->
+                        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="accordion__answer">
+                        <div class="answer-content">
+                            SyncMonster is an AI-powered dubbing tool that allows you to seamlessly dub videos into
+                            different languages while automatically adjusting the speaker's lip movement to match the
+                            new audio. Whether you're a content creator or an agency, SyncMonster simplifies the process
+                            of creating multilingual content without reshoots or tedious editing.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="accordion">
+                    <div class="accordion__question">
+                        <p>Can I translate a audio and then lip-sync that?</p>
+                        <!-- Plus Icon SVG -->
+                        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="accordion__answer">
+                        <div class="answer-content">
+                            SyncMonster is an AI-powered dubbing tool that allows you to seamlessly dub videos into
+                            different languages while automatically adjusting the speaker's lip movement to match the
+                            new audio. Whether you're a content creator or an agency, SyncMonster simplifies the process
+                            of creating multilingual content without reshoots or tedious editing.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer-section">
+        <div class="main-footer">
+            <div class="child-footer">
+                <img class="target-image" src="images/footer-logo.png" alt="Footer Image">
+            </div>
+            <div class="child-footer">
+                <div class="footer-nav">
+                    <h4>Home</h4>
+                    <h4>Tool</h4>
+                    <h4>Pricing</h4>
+                    <h4>Login</h4>
+                    <h4>Try For Free</h4>
+                </div>
+                <div class="contact-us">
+                    <h3 class="cont-follow">CONTACT US</h3>
+                    <h4 class="email-red">hello@syncmonster.com</h4>
+                    <h4>+91 891 989-11-91</h4>
+                    <h4>1901 Thornridge Cir. Koramangala, Bengaluru 560082</h4>
+                </div>
+                <div class="follow-us">
+                    <h3 class="cont-follow">FOLLOW US</h3>
+                    <div class="social-logo">
+                        <img src="images/instagram_logo.png" alt="Instagram Logo">
+                        <img src="images/youtube_logo.svg" alt="Youtube Logo">
+                        <img src="images/linkedin_logo.svg" alt="Linkedin Logo">
+                    </div>
+                </div>
+                <div class="copyright">
+                    <h4>© 2023 — Copyright </h4>
+                    <h4>All rights reserved</h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+</html>
