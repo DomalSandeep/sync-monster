@@ -332,12 +332,14 @@ body {
 
 /* 🔹 Left card (first child) slides in from left */
 .video-card:nth-child(1) {
-    transform: translateX(-200px) rotateY(-20deg);
+    /* transform: translateX(-200px) rotateY(-20deg); */
+    transform: translateY(234px) rotate(-48deg);
+
 }
 
 /* 🔹 Right card (second child) slides in from right */
 .video-card:nth-child(2) {
-    transform: translateX(200px) rotateY(20deg);
+    transform: translateY(-234px) rotate(48deg);
 }
 
 /* 🔹 When cards are visible (add this class via JavaScript) */
@@ -525,6 +527,7 @@ body {
 /*------------------------------------------------------------------------Container 4------------------------------------------------*/
 
 /* Container 4 - Slider Section */
+/* Container 4 - Slider Section */
 .container4 {
     background-color: #EFE8E3;
     padding: 80px 0;
@@ -547,7 +550,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* z-index: 10; */
     position: relative;
     min-width: 100px;
 }
@@ -580,40 +582,54 @@ body {
     transform: translateX(10px) scale(1.05);
 }
 
-/* Slides Container - FIXED */
+/* 🔹 Slides Container - PEEK EFFECT */
 .slides-container {
     flex: 1;
     position: relative;
-    overflow: hidden;
+    overflow: visible;  /* Changed from hidden to visible */
     border-radius: 12px;
     min-height: 500px;
-    /* Ensures container has height */
 }
 
-/* Individual Slide - FIXED */
+/* 🔹 Individual Slide - PEEK EFFECT */
 .slide {
     position: absolute;
-    /* 🔹 KEY FIX: Position absolute so they stack */
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - 200px);  /* Reduced width to show next slide */
     height: 100%;
     display: flex;
     opacity: 0;
     visibility: hidden;
-    /* 🔹 Hide non-active slides */
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.8s ease;
     transform: translateX(100%);
-    /* Start off-screen right */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* Active slide */
 .slide.active {
     opacity: 1;
     visibility: visible;
-    /* 🔹 Show active slide */
     transform: translateX(0);
-    /* Slide into view */
-    transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.8s ease;
+    z-index: 2;
+}
+
+/* 🔹 Next slide - peeking from right */
+.slide.next {
+    opacity: 0.5;  /* Semi-transparent */
+    visibility: visible;
+    transform: translateX(calc(100% - 170px));  /* Peek 170px */
+    z-index: 1;
+}
+
+/* 🔹 Previous slide - hidden to left */
+.slide.prev {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    z-index: 0;
 }
 
 /* Slide Content Layout */
@@ -708,6 +724,15 @@ body {
     .slider-arrow.prev {
         left: 130px;
     }
+    
+    /* Reduce peek on smaller screens */
+    .slide {
+        width: calc(100% - 150px);
+    }
+    
+    .slide.next {
+        transform: translateX(calc(100% - 120px));
+    }
 }
 
 @media (max-width: 992px) {
@@ -729,12 +754,18 @@ body {
     .slides-container {
         order: 1;
         width: 100%;
+        overflow: hidden;  /* Hide peek on mobile */
     }
 
     .slide {
+        width: 100%;  /* Full width on mobile */
         flex-direction: column;
         position: relative;
-        /* Stack on mobile */
+    }
+    
+    .slide.next {
+        opacity: 0;  /* No peek on mobile */
+        visibility: hidden;
     }
 
     .slide-content-left {
@@ -849,6 +880,7 @@ body {
     /* background-color: blueviolet; */
 }
 
+/* Bar containers - initial state */
 .bar-container {
     height: 20px;
     background-color: #2B2B2B;
@@ -856,6 +888,50 @@ body {
     border-radius: 10px;
     width: 325px;
     margin-bottom: 12px;
+
+    /* 🔹 Scroll-driven animation */
+    animation: fromleft both linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.bar-container1 {
+    height: 20px;
+    background-color: #2B2B2B;
+    position: relative;
+    border-radius: 10px;
+    width: 325px;
+    margin-bottom: 12px;
+
+    /* 🔹 Scroll-driven animation from right */
+    animation: fromright both linear !important;
+    animation-timeline: view() !important;
+    animation-range: entry 0% cover 40% !important;
+}
+
+/* Keyframes */
+@keyframes fromleft {
+    from {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fromright {
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .bar.gray-bar {
@@ -1078,22 +1154,35 @@ body {
     color: black;
 }
 
-.img-height {
+/* .img-height {
     height: 45px;
     align-content: end;
     animation: pop-up;
     animation-duration: 2s;
+} */
+.img-height {
+    height: 45px;
+    align-items: end;
+    transform: scale(0);
+    opacity: 0;
+    animation: pop-up linear forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
+
 
 @keyframes pop-up {
-    0% {
-        scale: 0;
+    from {
+        transform: scale(0.5);
+        opacity: 0;
     }
 
-    100% {
-        scale: 1;
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }
+
 
 .subtitle-logos {
     font-size: 14px;
@@ -1280,32 +1369,62 @@ body {
 }
 
 .pricing-card {
-    padding: 30px;
-    border: black solid 1px;
     width: 30%;
     border-radius: 5px;
-    background-color: coral;
     color: black;
 }
 
 .pricing-card.free {
-    background-color: #F2EDE9CC;
-    border: #c1b6b6 solid 1px;
+    background-color: #EFE8E3;
 }
 
 .pricing-card.dark {
-    background-color: black;
     color: white;
 }
 
-.pricing-card.popular {
+.card-top.popular {
     background-color: #F3DFDFCC;
     border: #d85959 solid 1px;
+}
+
+.card-bottom.popular {
+    background-color: #F3DFDFCC;
+    border: #d85959 solid 1px;
+}
+
+.card-divider.popular {
+    background-color: #F3DFDF;
+    border: #F3DFDFCC solid 1px;
+}
+
+.card-divider.popular::before {
+    border: #d85959 solid 1px;
+}
+
+.card-divider.popular::after {
+    border: #d85959 solid 1px;
+}
+
+.card-top.dark {
+    background: black;
+}
+
+.card-bottom.dark {
+    background: black;
+}
+
+.card-divider.dark {
+    background: black;
+    border: black;
 }
 
 .card-top {
     max-width: 288px;
     max-height: 288px;
+    padding: 30px;
+    border: #c1b6b6 solid 1px;
+    border-radius: 5px;
+    background: #F2EDE9CC;
 }
 
 .card-top h3 {
@@ -1341,6 +1460,7 @@ body {
     padding-left: 8px;
     border: black solid 1px;
 }
+
 
 /*for black container*/
 .badge-wrapper {
@@ -1443,6 +1563,50 @@ body {
     opacity: 1;
 }
 
+.card-divider {
+    position: relative;
+    height: 9px;
+    border-radius: 999px;
+    background-color: #F2EDE9CC;
+    margin: -1px 50px;
+    border: 1px solid #F2EDE9;
+}
+
+.card-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 94%;
+    width: 40px;
+    height: 7px;
+    background-color: #EFE8E3;
+    transform: translateY(-50%);
+    border: #c1b6b6 solid 1px;
+    border-radius: 5px;
+    clip-path: inset(0 50% 0 0);
+}
+
+.card-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 94%;
+    width: 40px;
+    height: 7px;
+    background-color: #EFE8E3;
+    transform: translateY(-50%);
+    border: #c1b6b6 solid 1px;
+    border-radius: 5px;
+    clip-path: inset(0 0 0 50%);
+}
+
+.card-bottom {
+    padding: 30px;
+    border: #c1b6b6 solid 1px;
+    border-radius: 5px;
+    background: #F2EDE9CC;
+}
+
 .card-bottom ul li {
     display: flex;
     flex-direction: column;
@@ -1530,6 +1694,10 @@ body {
     padding: 0 30px;
 }
 
+/* conatinr 8 testing */
+
+
+
 /* --- Refined CSS for FAQ Section --- */
 .container9 {
     background-color: #EFE8E3;
@@ -1550,16 +1718,43 @@ body {
 }
 
 .layout {
-    border-top: 3px solid #BAB6B3;
-    /* Top line for the first item */
+    border-top: 1px solid #BAB6B3;
+
 }
 
-.accordion {
-    background: transparent;
-    border-bottom: 3px solid #BAB6B3;
-    /* Divider line between items */
-    transition: all 0.3s ease;
+/* Staggering animation of each question-section */
+
+@keyframes reveal-up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+
 }
+
+
+.accordion {
+  background: transparent;
+  border-bottom: 3px solid #BAB6B3;
+  transition: all 0.3s ease;
+
+  /* initial hidden state */
+  opacity: 0;
+  transform: translateY(30px);
+
+  /* scroll-driven animation */
+  animation-name: reveal-up;
+  animation-timeline: view();
+animation-range: entry 40% cover 60%;
+  animation-fill-mode: both;
+}
+
+
+
 
 .accordion__question {
     padding: 24px 0;

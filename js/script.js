@@ -179,3 +179,5 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
+
+//Swiper Code --------------------------------------------------
