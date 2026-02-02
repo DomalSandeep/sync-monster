@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* 2.------------------------------------------------------- Navbar Styling ------------------------------------------------ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-image {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.btn-try {
+    background-color: #d4513a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-try:hover {
+    background-color: #FF1901;
+}
+
+/* Hover effect for nav links */
+.hover-text {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ff0000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-text:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hover-text:hover {
+    color: #ff0000;
+}
+
+/* ---------------------------------------------------Main Page ----------------------------------------------------*/
+.tools-main {
+    background: #EFE8E3;
+    min-height: 100vh;
+    padding: 60px 0 60px 0;
+}
+
+.section2-heading {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 100%;
+    letter-spacing: -2px;
+    color: black;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.video-content {
+    width: 100%;
+    max-width: 1093px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+}
+
+.blitz-logo {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blitz-logo img {
+    width: 120px; 
+    height: auto;
+    display: block;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.tools-video {
+    width: 433px;
+    height: 213px;
+    border-radius: 4px;
+    opacity: 1;
+    background: #000;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.tools-content {
+    flex: 1;
+    height: auto; 
+    min-height: 213px;
+}
+
+.back-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tools-content h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: black;
+}
+
+.tools-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.tools-content li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #020203;
+}
+
+.tools-content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: black;
+}
+
+.tools-button {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    border-radius: 4px;
+    cursor: pointer;
+    height: 42px;
+    width: 193px;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.btn-red {
+    background: #FF1901;
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #FF1901;
+    color: #FF1901;
+}
+
+/*------------------------------------------------------------- Footer CSS----------------------------------------------------------------- */
+
+.main-footer {
+    display: flex;
+}
+
+
+.child-footer {
+    width: 50%;
+    align-content: end;
+    color: #828D91;
+}
+
+.footer-nav {
+    display: flex;
+    line-height: 140%;
+    justify-content: space-between;
+    max-width: 415px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 40px;
+}
+
+.contact-us {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-us h4 {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.follow-us {
+    margin-top: 55px;
+}
+
+.social-logo {
+    display: flex;
+    max-width: 120px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.copyright {
+    display: flex;
+    margin-top: 100px;
+    max-width: 400px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.copyright h4 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-nav h4 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.email-red {
+    color: #FF1901;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+.cont-follow {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.target-image {
+    /* This filter sequence approximates #828D91 starting from black */
+    filter: invert(61%) sepia(11%) saturate(354%) hue-rotate(152deg) brightness(89%) contrast(85%);
+}

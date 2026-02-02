@@ -40,9 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-//Container 6
+//Container 4
 
 // Slider Functionality
+// Slider Functionality with Peek Effect
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slide');
     const numberItems = document.querySelectorAll('.number-item');
@@ -51,34 +52,48 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     const totalSlides = slides.length;
 
-    // Function to show specific slide
-    function showSlide(index) {
-        // Remove active class from all
-        slides.forEach(slide => slide.classList.remove('active'));
-        numberItems.forEach(item => item.classList.remove('active'));
+    // Function to update all slide positions
+    function updateSlides() {
+        slides.forEach((slide, index) => {
+            // Remove all state classes first
+            slide.classList.remove('active', 'next', 'prev');
+            
+            if (index === currentSlide) {
+                // Current active slide
+                slide.classList.add('active');
+            } else if (index === (currentSlide + 1) % totalSlides) {
+                // Next slide (peeking from right)
+                slide.classList.add('next');
+            } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+                // Previous slide (hidden to left)
+                slide.classList.add('prev');
+            }
+            // All other slides remain hidden (no class)
+        });
         
-        // Add active class to current
-        slides[index].classList.add('active');
-        numberItems[index].classList.add('active');
+        // Update number navigation
+        numberItems.forEach((item, index) => {
+            item.classList.toggle('active', index === currentSlide);
+        });
     }
 
     // Next slide
     function nextSlide() {
         currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
+        updateSlides();
     }
 
     // Previous slide
     function prevSlide() {
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        showSlide(currentSlide);
+        updateSlides();
     }
 
     // Click on number navigation
     numberItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             currentSlide = index;
-            showSlide(currentSlide);
+            updateSlides();
         });
     });
 
@@ -94,9 +109,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'ArrowLeft') prevSlide();
         if (e.key === 'ArrowRight') nextSlide();
     });
+
+    // Initialize - set up first slide
+    updateSlides();
 });
 
-
+// -------------------------------------------------------- on hover video play pause
 document.addEventListener('DOMContentLoaded', () => {
     // Select all potential video containers
     const containers = document.querySelectorAll('.killer-content-img, .video-card');
@@ -181,3 +199,58 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Swiper Code --------------------------------------------------
+
+
+// Flag animation JSON
+
+const flags = document.querySelectorAll('.flag');
+    const redTransition = document.getElementById('red-transition');
+
+    flags.forEach(flag => {
+        flag.addEventListener('click', () => {
+            // Start animation
+            redTransition.classList.add('active');
+
+            // Example: do your language/video logic AFTER animation starts
+            setTimeout(() => {
+                // 🔥 put your language switch / video change logic here
+                console.log('Language switched');
+            }, 500);
+
+            // Reset animation so it can replay
+            setTimeout(() => {
+                redTransition.classList.remove('active');
+            }, 1200);
+        });
+    });
+
+
+    // Swiper code
+
+        var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      autoplay: {
+      delay: 2000,
+              },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+
+    // flag reveal js
+
+    function triggerReveal2() {
+    document
+        .getElementById("hiddenSection")
+        .classList.add("active");
+}
+
+//hide js code
+function closeSection() {
+    document
+        .getElementById("hiddenSection")
+        .classList.remove("active");
+}

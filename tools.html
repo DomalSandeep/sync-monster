@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tools.css">
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
@@ -23,7 +23,7 @@
 
         <ul class="nav-links">
             <li><a class="hover-text" href="#home">Home</a></li>
-            <li><a class="hover-text" href="#tools">Tools</a></li>
+            <li><a class="hover-text" href="tools.html">Tools</a></li>
             <li><a class="hover-text" href="#about">About us</a></li>
             <li><a class="hover-text" href="#pricing">Pricing</a></li>
             <li><a class="hover-text" href="#login">Login</a></li>
@@ -39,21 +39,21 @@
                 There is a monster for every need.
             </h2>
         </div>
+
         <div class="video-content">
-            <div class="tools-video">
-                <video paused loop muted playsinline class="back-video">
-                    <source src="images/blitz_video.mp4" type="video/mp4">
+            <!-- First Container (Blitz) -->
+            <div class="container">
 
-                </video>
-            </div>
-            <div class="tools-video">
-                <video paused loop muted playsinline class="back-video">
-                    <source src="images/blitz_video.mp4" type="video/mp4">
-
-                </video>
-            </div>
-            <div class="tools-content">
-                <div class="">
+                <div class="tools-video">
+                    <!-- Note: Added 'autoplay' so it's visible, 'paused' is not a standard attribute -->
+                    <video autoplay loop muted playsinline class="back-video">
+                        <source src="images/blitz_video.mp4" type="video/mp4">
+                    </video>
+                    <div class="blitz-logo">
+                        <img src="images/blitz-logo.png" alt="blitz-logo">
+                    </div>
+                </div>
+                <div class="tools-content">
                     <h3>Get lightning-fast dubbing with SyncMonster Blitz</h3>
                     <ul>
                         <li>Effortlessly upload your video and select your language</li>
@@ -61,32 +61,35 @@
                         <li>Quick and easy transformation for your content!</li>
                     </ul>
                     <div class="tools-button">
-
-
-                        <button veiw Plans> </button>
-                        <button veiw Plans> </button>
+                        <button class="btn btn-red">View plans</button>
+                        <button class="btn btn-outline">Try now</button>
                     </div>
                 </div>
-                <div class="">
-                    <h3>Get lightning-fast dubbing with SyncMonster Blitz</h3>
+            </div>
+
+            <!-- Second Container (Pro) -->
+            <div class="container">
+                <div class="tools-video">
+                    <video autoplay loop muted playsinline class="back-video">
+                        <source src="images/pro_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="tools-content">
+                    <h3>Experience professional editing with SyncMonster Pro</h3>
                     <ul>
-                        <li>Effortlessly upload your video and select your language</li>
-                        <li>AI-powered dubbing and lip sync for precise results</li>
-                        <li>Quick and easy transformation for your content!</li>
+                        <li>Comprehensive features: timeline, media library, scene detection, face tracking</li>
+                        <li>Easily fine-tune every aspect of lip syncing for multilingual perfection</li>
+                        <li>Simple enough for beginners, powerful for professionals</li>
                     </ul>
                     <div class="tools-button">
-
-
-                        <button veiw Plans> </button>
-                        <button veiw Plans> </button>
+                        <button class="btn btn-red">View plans</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
-
+    <!------------------------------------------------------------Footer Section------------------------------------------------------>
 
     <footer class="footer-section">
         <div class="main-footer">

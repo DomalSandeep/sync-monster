@@ -12,25 +12,64 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+      <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
+
+    <!-- Trial of annoucnement bar -->
+    <div class="scroller-ann">
+        <div class="scroller-inner-ann">
+            <span> <img src="images/google-logo.png" alt="">
+                Excited to be a part of 2024 Class of Google for Startups Accelerator: AI First!
+                <a href="#">Read more</a></span>
+            <span>We are also battling it out at TechCrunch <img src="images/disrupt-logo.png" alt="TechCrunch_logo">this year! Read more</span>
+            
+        </div>
+    </div>
+    <!-- 1. ANNOUNCEMENT BAR -->
+    <!-- <div class="announcement-bar">
+        <div class="announcement-container" id="bannerContainer">
+            <div class="announcement-item active">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                Excited to be a part of 2024 Class of Google for Startups Accelerator: AI First!
+                <a href="#">Read more</a>
+            </div>
+
+            <div class="announcement-item">
+                <span>We are also battling it out at <strong>TechCrunch</strong></span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/TechCrunch_logo.svg" alt="TC"
+                    style="height: 14px; margin-left: 10px;">
+                <span>this year!</span>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+    </div> -->
+
     <!-- Navigation Bar -->
     <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
         <div class="nav-logo">
             <img src="images/logo.svg" alt="">
         </div>
 
         <ul class="nav-links">
             <li><a class="hover-text" href="#home">Home</a></li>
-            <li><a class="hover-text" href="#tools">Tools</a></li>
+            <li><a class="hover-text" href="tools.html">Tools</a></li>
             <li><a class="hover-text" href="#about">About us</a></li>
             <li><a class="hover-text" href="#pricing">Pricing</a></li>
             <li><a class="hover-text" href="#login">Login</a></li>
-            <li><a class="btn-try" href="#try">Try for free →</a></li>
+            <li><a class="btn-try" href="#try">Try for free <img src="images/arrow.svg" alt=""></a></li>
         </ul>
     </nav>
 
+    <!-- Hero Section with Video Background -->
     <!-- Hero Section with Video Background -->
     <section class="video-section" id="hero">
         <!-- Background Video -->
@@ -56,12 +95,46 @@
                 syncing lips and translates your video to any language.
             </p>
 
-            <button class="cta-button" onclick="triggerReveal()">
+            <button class="cta-button" onclick="triggerReveal(); triggerReveal2()">
                 See the magic for yourself
                 <img class="magic-wand" src="images/magic-wand.gif" alt="Magic Wand">
             </button>
         </div>
+
+<div id="hiddenSection" class="reveal-section">
+    <div class="flag-section">
+            <button class="cta-button1" onclick="">English-Original</button>
+
+            <div class="flag">
+                <div class="flag-content">Spanish</div>
+                <div class="flag-logo"><img src="images/mandarian-flag.png" alt=""></div>
+            </div>
+
+            <div class="flag">
+                <div class="flag-content">German</div>
+                <div class="flag-logo"><img src="images/german-flag.png" alt=""></div>
+            </div>
+
+            <div class="flag">
+                <div class="flag-content">Hindi</div>
+                <div class="flag-logo"><img src="images/india-flag.png" alt=""></div>
+            </div>
+
+            <div class="flag">
+                <div class="flag-content">Mandarian</div>
+                <div class="flag-logo"><img src="images/china-flag.png" alt=""></div>
+            </div>
+
+            <div class="flag" onclick="closeSection()">
+                <div class="flag-content">X</div>
+            </div>
+        </div>
+    </div>
+
+
+
     </section>
+
 
     <!--Section 2-->
     <section class="container2">
@@ -92,6 +165,8 @@
                 <img class="logos" src="images/piramal_logo.svg" alt="Piramal Logo">
             </div>
         </div>
+
+
 
         <!-- Heading Below -->
         <h2 class="section2-heading">
@@ -302,11 +377,13 @@
                             <div class="side-old">
                                 <h3>Reshooting in a new language</h3>
 
-                                <div class="bar-container">
-                                    <div class="bar gray-bar" style="width: 80%;"></div>
-                                    <div class="bar light-gray-bar" style="width: 60%;"></div>
+                                <div class="killer-main-inner1">
+                                    <div class="bar-container">
+                                        <div class="bar gray-bar" style="width: 80%;"></div>
+                                        <div class="bar light-gray-bar" style="width: 60%;"></div>
+                                    </div>
+                                    <span class="stat-label">$75 to $150</span>
                                 </div>
-                                <span class="stat-label">$75 to $150</span>
 
                             </div>
 
@@ -327,28 +404,35 @@
                                     <img src="images/logo.svg" alt="Sync Monster Logo">
                                     <h3>Lip-syncing</h3>
                                 </div>
-                                <div class="bar-container bar-container1">
-                                    <div class="bar light-green-bar" style="width: 50%;"></div>
-                                    <div class="bar green-bar" style="width: 40%;"></div>
+                                <div class="killer-main-inner">
+                                    <div class="bar-container bar-container1">
+                                        <div class="bar light-green-bar" style="width: 50%;"></div>
+                                        <div class="bar green-bar" style="width: 40%;"></div>
+                                    </div>
+                                    <div class="stat-group">
+                                        <span class="stat-label highlight">$10 to $75</span>
+                                        <span class="savings-tag">30 to 50% cheaper</span>
+                                    </div>
                                 </div>
-                                <div class="stat-group">
-                                    <span class="stat-label highlight">$10 to $75</span>
-                                    <span class="savings-tag">30 to 50% cheaper</span>
-                                </div>
-
                             </div>
                         </div>
                     </div>
+
                     <div class="killer-wrapper">
+
                         <!--------------------------------Range----------------->
                         <!-------------------------------------------------------------------------------div1----------------------------------------------------------------->
                         <div class="killer-main">
                             <div class="side-old">
+                                <h3>Reshooting in a new language</h3>
 
-                                <div class="bar-container">
-                                    <div class="bar gray-bar" style="width: 80%;"></div>
+                                <div class="killer-main-inner1">
+                                    <div class="bar-container">
+                                        <div class="bar gray-bar" style="width: 80%;"></div>
+                                        <div class="bar light-gray-bar" style="width: 60%;"></div>
+                                    </div>
+                                    <span class="stat-label">$75 to $150</span>
                                 </div>
-                                <span class="stat-label">Up to 4 weeks</span>
 
                             </div>
 
@@ -356,25 +440,34 @@
 
                             <div class="killer-wrapper-middle">
 
-                                <div class="label-group1">
-                                    <p>Total Spent</p>
-                                    <span>for a 90 min movie</span>
+                                <div class="label-group">
+                                    <p>Total cost</p>
+                                    <span>per minute</span>
                                 </div>
                             </div>
 
                             <!-------------------------------------------------------------------------------div3----------------------------------------------------------------->
                             <div class="killer-third">
-                                <div class="bar-container bar-container1">
-                                    <div class="bar green-bar" style="width: 32%;"></div>
-                                </div>
-                                <div class="stat-group">
-                                    <span class="stat-label highlight">within 1 week</span>
-                                    <span class="savings-tag">50 to 70% faster</span>
-                                </div>
+                                <div class=" logo-heading">
 
+                                    <img src="images/logo.svg" alt="Sync Monster Logo">
+                                    <h3>Lip-syncing</h3>
+                                </div>
+                                <div class="killer-main-inner">
+                                    <div class="bar-container bar-container1">
+                                        <div class="bar light-green-bar" style="width: 50%;"></div>
+                                        <div class="bar green-bar" style="width: 40%;"></div>
+                                    </div>
+                                    <div class="stat-group">
+                                        <span class="stat-label highlight">$10 to $75</span>
+                                        <span class="savings-tag">30 to 50% cheaper</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
 
@@ -481,33 +574,88 @@
 
     </section>
 
-    <section class="container7">
+        <section class="testing">
+
         <div class="testimonials">
-            <div class="cards">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/image1.png" alt="">
+            <!-- Swiper -->
+         <div class="cards">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/image1.png" alt="">
 
+                            </div>
+                            <div class="img-content">
+                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                <h3>Francis Towne</h3>
+                                <p>Travel influencer</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="img-content">
-                        <img src="images/apostrophe-vector.png" alt="Apostrophe">
-                        <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
-                        <h3>Francis Towne</h3>
-                        <p>Travel influencer</p>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/image2.png" alt="">
+                            </div>
+                            <div class="img-content">
+                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                <h3>Francis Towne</h3>
+                                <p>Travel influencer</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/image2.png" alt="">
-                    </div>
-                    <div class="img-content">
-                        <img src="images/apostrophe-vector.png" alt="Apostrophe">
-                        <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
-                        <h3>Francis Towne</h3>
-                        <p>Travel influencer</p>
-                    </div>
-                </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/image1.png" alt="">
 
+                            </div>
+                            <div class="img-content">
+                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                <h3>Francis Towne</h3>
+                                <p>Travel influencer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/image2.png" alt="">
+                            </div>
+                            <div class="img-content">
+                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                <h3>Francis Towne</h3>
+                                <p>Travel influencer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/image1.png" alt="">
+
+                            </div>
+                            <div class="img-content">
+                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                <h3>Francis Towne</h3>
+                                <p>Travel influencer</p>
+                            </div>
+                        </div>
+                    </div>
+            
+
+              
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+    
             </div>
             <div class="many-logos">
                 <div class="logo-height">
@@ -536,8 +684,9 @@
                 </div>
             </div>
         </div>
-
     </section>
+
+
     <section class="container8" id="pricing">
         <div>
             <h2 class="section2-heading">
@@ -574,6 +723,7 @@
                     <div class="card-divider"></div>
 
                     <div class="card-bottom">
+
                         <ul>
                             <li>
                                 <span class="label">Max duration of video</span>
@@ -634,7 +784,7 @@
 
 
                     <div class="card-top popular">
-                        <h3>Blitz <span class="popular-badge">Popular</span></h3>
+                        <h3>Blitz <span class="popular-badge btn-4">Popular</span></h3>
                         <p class="desc">For pros who demand a killer arsenal to nail every lip-sync flawlessly.</p>
 
                         <span class="badge">1 User</span>
@@ -887,13 +1037,13 @@
             <div class="child-footer">
                 <img class="target-image" src="images/footer-logo.png" alt="Footer Image">
             </div>
-            <div class="child-footer">
+            <div class="child-footer second-child">
                 <div class="footer-nav">
                     <h4>Home</h4>
                     <h4>Tool</h4>
                     <h4>Pricing</h4>
                     <h4>Login</h4>
-                    <h4>Try For Free</h4>
+                    <h4>Try For Free </h4>
                 </div>
                 <div class="contact-us">
                     <h3 class="cont-follow">CONTACT US</h3>
