@@ -14,56 +14,65 @@ body {
 
 /* 1. ANNOUNCEMENT BANNER STYLING */
 
-.scroller-ann {
-    height: 30px !important;
-    overflow: hidden !important;
-    position: relative;
-    background-color: transparent; /* Change to test if you can see the box */
+.scroller2 {
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  background: black;
 }
 
-.scroller-inner-ann {
+/* The List */
+.scroller-inner2 {
     display: flex;
     flex-direction: column;
-    margin: 0 !important;
-    padding: 0 !important;
-    /* REMOVE GAP - Gap breaks vertical scroll math */
-    gap: 0 !important; 
-    animation: slide 15s cubic-bezier(0.83, 0, 0.17, 1) infinite;
-}
-
-.scroller-inner-ann span {
-    display: flex !important;
+    animation: slide2 12s cubic-bezier(0.83, 0, 0.17, 1) infinite;
     align-items: center;
-    justify-content: center;
-    /* Height MUST match the container exactly */
-    height: 30px !important; 
-    line-height: 30px !important;
-    flex-shrink: 0;
-    white-space: nowrap; /* Prevents text from wrapping and disappearing */
-    margin: 0 !important;
-    padding: 0 10px !important;
+}
+
+.scroller-inner2 img {
+    height: 20px;
+}
+.scroller-inner2 a {
+  color: white;
+}
+.scroller-inner2 span {
+    color: #ffffff;
+    white-space: nowrap;
     font-size: 14px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
-.scroller-inner-ann img {
-    height: 18px !important;
-    width: auto;
-    margin: 0 5px !important;
-    display: inline-block;
-}
+/* Animation */
+@keyframes slide2 {
 
-/* ANIMATION MATH:
-   Move by exactly the height of the container (30px)
-*/
-@keyframes slide {
-    0%, 45% {
+    0%,
+    25% {
         transform: translateY(0);
     }
-    50%, 95% {
-        transform: translateY(-30px);
+
+    33%,
+    58% {
+        transform: translateY(-33.33%);
     }
+
+    66%,
+    91% {
+        transform: translateY(-66.66%);
+    }
+
     100% {
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .scroller-inner2 span {
+        font-size: 12px;
     }
 }
 
@@ -77,10 +86,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top: 50px;
+    z-index: 101;
+    width: 100%;
+    transition: ease all 0.25s;
+}
+
+.fixed-navbar {
+    top: 0px;
 }
 
 .logo-image {
@@ -108,6 +123,7 @@ body {
     color: white !important;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-try:hover {
@@ -142,40 +158,36 @@ body {
     color: #ff0000;
 }
 
-/* Nav bar responsiveness */
+/* Nav barMobile section( responsiveness) */
 
 
-nav {
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
 
 .logo {
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
-ul {
+/* Specific class for this UL to avoid affecting others */
+.nav-list {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-ul li {
+.nav-item {
     margin-right: 20px;
 }
 
-ul li a {
-    color: white;
+.nav-link {
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-ul li a:hover {
-    color: lightgreen;
+.nav-link:hover,
+.nav-link.active {
+    font-size: 16px;
 }
 
 .checkbtn {
@@ -189,39 +201,41 @@ ul li a:hover {
     display: none;
 }
 
+/* Mobile Responsive Logic */
 @media (max-width: 768px) {
     .checkbtn {
         display: block;
         order: 1;
-        margin-right: 20px;
     }
 
-    ul {
+    .nav-list {
         position: fixed;
-        top: 80px;
+        top: 64px;
         right: -100%;
-        background-color: rgba(0, 0, 0, 0.6);
-
+        background: rgba(0, 0, 0, 0.9);
+        /* Darker overlay for mobile */
+        backdrop-filter: blur(20px);
         width: 100%;
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         transition: all 0.3s;
+        padding-top: 35px;
     }
 
-    ul li {
+    .nav-item {
         margin: 20px 0;
     }
 
-    ul li a {
+    .nav-link {
         font-size: 20px;
+
     }
 
-    #check:checked~ul {
+    /* Only target the .nav-list that follows the checked box */
+    #check:checked~.nav-list {
         right: 0;
-        margin-top: -18.5px;
     }
 }
 
@@ -244,7 +258,7 @@ ul li a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     z-index: -1;
     opacity: 0.4;
@@ -336,8 +350,8 @@ ul li a:hover {
 }
 
 @media (max-width: 768px) {
-    .scroller-inner-ann span{
-          font-size: 12px;
+    .scroller-inner-ann span {
+        font-size: 12px;
     }
 }
 
@@ -451,11 +465,12 @@ ul li a:hover {
     cursor: pointer;
     transition: background-color 0.6s ease, color 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease;
     height: 40px;
-  width: 140px;
-  justify-content: center;
+    width: 140px;
+    justify-content: center;
 }
+
 .cta-button1:hover {
-  background: #ff1901;
+    background: #ff1901;
 }
 
 /* ===== Mobile Responsive ===== */
@@ -467,7 +482,7 @@ ul li a:hover {
         overflow-x: auto;
         justify-content: flex-start;
         flex-direction: column;
-    align-items: end;
+        align-items: end;
     }
 
     .flag {
@@ -526,11 +541,12 @@ ul li a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 40px; 
+    padding: 40px;
     transform: translateY(100%);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.4s ease;
 }
+
 .reveal-section.active {
     transform: translateY(0);
     opacity: 1;
@@ -635,6 +651,9 @@ ul li a:hover {
     .section2-heading {
         font-size: 2rem;
     }
+    .container2{
+        gap: 60px;
+    }
 }
 
 
@@ -662,28 +681,28 @@ ul li a:hover {
     transition: transform 0.3s ease;
 
     /* 🔹 Initial state - hidden and tilted */
-    opacity: 0;
-    transform: translateX(-100px) rotateY(-15deg);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    /* opacity: 0; */
+    /* transform: translateX(-100px);
+    transition: opacity 0.8s ease, transform 0.8s ease; */
 }
 
 /* 🔹 Left card (first child) slides in from left */
-.video-card:nth-child(1) {
+/* .video-card:nth-child(1) { */
     /* transform: translateX(-200px) rotateY(-20deg); */
-    transform: translateY(234px) rotate(-48deg);
+    /* transform: translateX(-100px) translateY(100px);
 
-}
+} */
 
 /* 🔹 Right card (second child) slides in from right */
-.video-card:nth-child(2) {
-    transform: translateY(-234px) rotate(48deg);
-}
+/* .video-card:nth-child(2) {
+    transform: translateX(100px) translateY(100px);
+} */
 
 /* 🔹 When cards are visible (add this class via JavaScript) */
-.video-card.animate-in {
+/* .video-card.animate-in {
     opacity: 1;
     transform: translateX(0) rotateY(0deg);
-}
+} */
 
 /* Video inside card */
 .card-video {
@@ -921,6 +940,9 @@ ul li a:hover {
     .card-video {
         filter: brightness(0.5);
     }
+    .two-video{
+          margin: 0 auto 60px;
+    }
 }
 
 /*------------------------------------------------------------------------Container 4------------------------------------------------*/
@@ -1064,7 +1086,7 @@ ul li a:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .number-item span {
         font-size: 60px;
     }
@@ -1082,9 +1104,12 @@ ul li a:hover {
         transform: translateX(calc(100% - 120px));
         /* 30px gap maintained */
     }
+    .container4{
+        padding: 0px;
+    }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .slider-wrapper {
         flex-direction: column-reverse;
         gap: 30px;
@@ -1477,7 +1502,7 @@ ul li a:hover {
     text-align: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     /* 
 
@@ -1697,6 +1722,9 @@ ul li a:hover {
     .killer-main {
         margin-top: 10px;
     }
+    .container5{
+        padding-top:0px;
+    }
 
 }
 
@@ -1768,7 +1796,7 @@ ul li a:hover {
     font-weight: 400;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .subtitle {
         font-size: 12px;
         text-align: center;
@@ -1825,7 +1853,7 @@ ul li a:hover {
 }
 
 .card-top.popular {
-    background-color: #F3DFDFCC;
+    background-color: #F3DFDF;
     border: #d85959 solid 1px;
 }
 
@@ -1864,7 +1892,10 @@ ul li a:hover {
     padding: 30px;
     border: #c1b6b6 solid 1px;
     border-radius: 5px;
-    background: #F2EDE9CC;
+    background: #F2EDE9;
+    position: sticky;
+    top: 60px;
+    z-index: 100;
 }
 
 .card-top h3 {
@@ -2037,6 +2068,7 @@ ul li a:hover {
     background-color: #F2EDE9CC;
     margin: -1px 50px;
     border: 1px solid #F2EDE9;
+
 }
 
 .card-divider::after {
@@ -2072,6 +2104,7 @@ ul li a:hover {
     border: #c1b6b6 solid 1px;
     border-radius: 5px;
     background: #F2EDE9CC;
+    margin-top: -2px;
 }
 
 .card-bottom ul {
@@ -2169,7 +2202,7 @@ ul li a:hover {
     padding: 0 30px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .pricing-cards {
         flex-direction: column;
         gap: 24px;
@@ -2187,16 +2220,16 @@ ul li a:hover {
         height: auto;
     }
 
-    .card-top ul{
-        position:absolute;
+    .card-top ul {
+        position: absolute;
     }
 
-    .talk-to-us{
+    .talk-to-us {
         display: none;
     }
 }
 
-/*Container 6 CSS code till here not added responsiveness yet*/
+/*Container 6 CSS code till here*/
 
 /*Container 7 Css*/
 .testimonials {
@@ -2206,8 +2239,6 @@ ul li a:hover {
 .cards {
     max-width: 1000px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
     gap: 10px;
     background-color: #EFE8E3;
     align-items: center;
@@ -2222,6 +2253,7 @@ ul li a:hover {
     display: flex;
     gap: 20px;
     border: 1px solid #bbb4b4;
+
 }
 
 .card-image {
@@ -2296,7 +2328,7 @@ ul li a:hover {
     max-width: 360px;
     justify-content: center;
     text-align: center;
-      margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .plan {
@@ -2468,7 +2500,7 @@ ul li a:hover {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .accordion__question p {
         font-size: 16px;
     }

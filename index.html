@@ -10,27 +10,36 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-      <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- WOW animation linking -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
 
 <body>
 
+
+    <!-- 1. ANNOUNCEMENT BAR -->
     <!-- Trial of annoucnement bar -->
-    <div class="scroller-ann">
-        <div class="scroller-inner-ann">
+<div class="scroller2">
+        <div class="scroller-inner2">
             <span> <img src="images/google-logo.png" alt="">
                 Excited to be a part of 2024 Class of Google for Startups Accelerator: AI First!
                 <a href="#">Read more</a></span>
-            <span>We are also battling it out at TechCrunch <img src="images/disrupt-logo.png" alt="TechCrunch_logo">this year! Read more</span>
-            
+            <span>We are also battling it out at TechCrunch this year! Read more</span>
+            <span>
+                Excited to be a part of 2024 Class of Google for Startups Accelerator: AI First!
+            </span>
+
         </div>
     </div>
-    <!-- 1. ANNOUNCEMENT BAR -->
     <!-- <div class="announcement-bar">
         <div class="announcement-container" id="bannerContainer">
             <div class="announcement-item active">
@@ -55,6 +64,23 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
+
+        <label class="logo"><img src="images/logo.svg" alt=""></label>
+
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link hover-text active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link hover-text" href="#">Tools</a></li>
+            <li class="nav-item"><a class="nav-link hover-text" href="#">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link hover-text" href="#">Login</a></li>
+            <li><a class="btn-try" href="#try">Try for free <img src="images/arrow.svg" alt=""></a></li>
+        </ul>
+    </nav>
+    <!-- Old mobile Nav bar not working properly -->
+    <!-- <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
         <div class="nav-logo">
             <img src="images/logo.svg" alt="">
         </div>
@@ -65,13 +91,13 @@
             <li><a class="hover-text" href="#about">About us</a></li>
             <li><a class="hover-text" href="#pricing">Pricing</a></li>
             <li><a class="hover-text" href="#login">Login</a></li>
-            <li><a class="btn-try" href="#try">Try for free <img src="images/arrow.svg" alt=""></a></li>
         </ul>
-    </nav>
+    </nav> -->
 
     <!-- Hero Section with Video Background -->
-    <!-- Hero Section with Video Background -->
+
     <section class="video-section" id="hero">
+
         <!-- Background Video -->
         <video id="mainVideo" autoplay muted playsinline class="back-video">
             <source src="images/intro-vid.mp4" type="video/mp4">
@@ -101,35 +127,35 @@
             </button>
         </div>
 
-<div id="hiddenSection" class="reveal-section">
-    <div class="flag-section">
-            <button class="cta-button1" onclick="">English-Original</button>
+        <div id="hiddenSection" class="reveal-section">
+            <div class="flag-section">
+                <button class="cta-button1" onclick="">English-Original</button>
 
-            <div class="flag">
-                <div class="flag-content">Spanish</div>
-                <div class="flag-logo"><img src="images/mandarian-flag.png" alt=""></div>
-            </div>
+                <div class="flag">
+                    <div class="flag-content">Spanish</div>
+                    <div class="flag-logo"><img src="images/mandarian-flag.png" alt=""></div>
+                </div>
 
-            <div class="flag">
-                <div class="flag-content">German</div>
-                <div class="flag-logo"><img src="images/german-flag.png" alt=""></div>
-            </div>
+                <div class="flag">
+                    <div class="flag-content">German</div>
+                    <div class="flag-logo"><img src="images/german-flag.png" alt=""></div>
+                </div>
 
-            <div class="flag">
-                <div class="flag-content">Hindi</div>
-                <div class="flag-logo"><img src="images/india-flag.png" alt=""></div>
-            </div>
+                <div class="flag">
+                    <div class="flag-content">Hindi</div>
+                    <div class="flag-logo"><img src="images/india-flag.png" alt=""></div>
+                </div>
 
-            <div class="flag">
-                <div class="flag-content">Mandarian</div>
-                <div class="flag-logo"><img src="images/china-flag.png" alt=""></div>
-            </div>
+                <div class="flag">
+                    <div class="flag-content">Mandarian</div>
+                    <div class="flag-logo"><img src="images/china-flag.png" alt=""></div>
+                </div>
 
-            <div class="flag" onclick="closeSection()">
-                <div class="flag-content">X</div>
+                <div class="flag" onclick="closeSection()">
+                    <div class="flag-content">X</div>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -169,7 +195,7 @@
 
 
         <!-- Heading Below -->
-        <h2 class="section2-heading">
+        <h2 class="section2-heading wow animate__fadeInUp">
             There is a monster for every need.
         </h2>
     </section>
@@ -178,7 +204,7 @@
         <div class="two-video">
 
             <!-- Blitz Card -->
-            <div class="video-card">
+            <div class="video-card wow animate__fadeInBottomLeft">
                 <video muted playsinline class="card-video">
                     <source src="images/blitz_video.mp4" type="video/mp4">
                 </video>
@@ -204,7 +230,7 @@
             </div>
 
             <!-- Pro Card -->
-            <div class="video-card">
+            <div class="video-card wow animate__fadeInBottomRight">
                 <video muted playsinline class="card-video">
                     <source src="images/pro_video.mp4" type="video/mp4">
                 </video>
@@ -230,13 +256,13 @@
             </div>
 
         </div>
-        <h2 class="section2-heading">
+        <h2 class="section2-heading wow animate__fadeIn">
             Unleash unstoppable power and precision.
         </h2>
     </section>
 
     <section class="container4">
-        <div class="slider-wrapper">
+        <div class="slider-wrapper wow animate__flipInX">
 
             <!-- Number Navigation (Left Side) -->
             <div class="slider-numbers">
@@ -374,7 +400,7 @@
                         <!--------------------------------Range----------------->
                         <!-------------------------------------------------------------------------------div1----------------------------------------------------------------->
                         <div class="killer-main">
-                            <div class="side-old">
+                            <div class="side-old wow animate__fadeInRight">
                                 <h3>Reshooting in a new language</h3>
 
                                 <div class="killer-main-inner1">
@@ -398,14 +424,14 @@
                             </div>
 
                             <!-------------------------------------------------------------------------------div3----------------------------------------------------------------->
-                            <div class="killer-third">
+                            <div class="killer-third wow animate__fadeInLeft">
                                 <div class=" logo-heading">
 
                                     <img src="images/logo.svg" alt="Sync Monster Logo">
                                     <h3>Lip-syncing</h3>
                                 </div>
                                 <div class="killer-main-inner">
-                                    <div class="bar-container bar-container1">
+                                    <div class="bar-container bar-container1 wow animate__fadeInLeft">
                                         <div class="bar light-green-bar" style="width: 50%;"></div>
                                         <div class="bar green-bar" style="width: 40%;"></div>
                                     </div>
@@ -423,7 +449,7 @@
                         <!--------------------------------Range----------------->
                         <!-------------------------------------------------------------------------------div1----------------------------------------------------------------->
                         <div class="killer-main">
-                            <div class="side-old">
+                            <div class="side-old wow animate__fadeInRight">
                                 <h3>Reshooting in a new language</h3>
 
                                 <div class="killer-main-inner1">
@@ -447,14 +473,14 @@
                             </div>
 
                             <!-------------------------------------------------------------------------------div3----------------------------------------------------------------->
-                            <div class="killer-third">
+                            <div class="killer-third wow animate__fadeInLeft">
                                 <div class=" logo-heading">
 
                                     <img src="images/logo.svg" alt="Sync Monster Logo">
                                     <h3>Lip-syncing</h3>
                                 </div>
                                 <div class="killer-main-inner">
-                                    <div class="bar-container bar-container1">
+                                    <div class="bar-container bar-container1 wow animate__fadeInLeft">
                                         <div class="bar light-green-bar" style="width: 50%;"></div>
                                         <div class="bar green-bar" style="width: 40%;"></div>
                                     </div>
@@ -474,7 +500,7 @@
 
 
                 <!-- Tier 3: Footer Stats (The 3 Cards) -->
-                <div class="stats-footer">
+                <div class="stats-footer wow animate__fadeInUpBig">
                     <div class="stat-card">
                         <h4>1 Billion +</h4>
                         <p>Training data points</p>
@@ -499,7 +525,7 @@
 
         <div>
             <div>
-                <h2 class="section2-heading">
+                <h2 class="section2-heading wow animate__fadeIn">
                     Everyone loves the monster!
                 </h2>
             </div>
@@ -574,88 +600,88 @@
 
     </section>
 
-        <section class="testing">
+    <section class="testing">
 
         <div class="testimonials">
             <!-- Swiper -->
-         <div class="cards">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/image1.png" alt="">
+            <div class="cards">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/image1.png" alt="">
 
-                            </div>
-                            <div class="img-content">
-                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
-                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
-                                <h3>Francis Towne</h3>
-                                <p>Travel influencer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/image2.png" alt="">
-                            </div>
-                            <div class="img-content">
-                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
-                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
-                                <h3>Francis Towne</h3>
-                                <p>Travel influencer</p>
+                                </div>
+                                <div class="img-content">
+                                    <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                    <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                    <h3>Francis Towne</h3>
+                                    <p>Travel influencer</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/image1.png" alt="">
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/image2.png" alt="">
+                                </div>
+                                <div class="img-content">
+                                    <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                    <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                    <h3>Francis Towne</h3>
+                                    <p>Travel influencer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/image1.png" alt="">
 
-                            </div>
-                            <div class="img-content">
-                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
-                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
-                                <h3>Francis Towne</h3>
-                                <p>Travel influencer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/image2.png" alt="">
-                            </div>
-                            <div class="img-content">
-                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
-                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
-                                <h3>Francis Towne</h3>
-                                <p>Travel influencer</p>
+                                </div>
+                                <div class="img-content">
+                                    <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                    <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                    <h3>Francis Towne</h3>
+                                    <p>Travel influencer</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/image1.png" alt="">
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/image2.png" alt="">
+                                </div>
+                                <div class="img-content">
+                                    <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                    <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                    <h3>Francis Towne</h3>
+                                    <p>Travel influencer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/image1.png" alt="">
 
-                            </div>
-                            <div class="img-content">
-                                <img src="images/apostrophe-vector.png" alt="Apostrophe">
-                                <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
-                                <h3>Francis Towne</h3>
-                                <p>Travel influencer</p>
+                                </div>
+                                <div class="img-content">
+                                    <img src="images/apostrophe-vector.png" alt="Apostrophe">
+                                    <h2>We finished the episodes 3 weeks early, thanks to Syncmonster!</h2>
+                                    <h3>Francis Towne</h3>
+                                    <p>Travel influencer</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-            
 
-              
+
+
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
-    
+
             </div>
             <div class="many-logos">
                 <div class="logo-height">
@@ -689,7 +715,7 @@
 
     <section class="container8" id="pricing">
         <div>
-            <h2 class="section2-heading">
+            <h2 class="section2-heading wow animate__fadeIn">
                 Flexible plans for all your needs.
             </h2>
         </div>
@@ -704,7 +730,7 @@
                 </div>
             </div>
             <div class="pricing-cards">
-                <div class="pricing-card free">
+                <div class="pricing-card free wow animate__fadeInUpBig">
                     <div class="card-top">
                         <h3>Free</h3>
                         <p class="desc">
@@ -780,7 +806,7 @@
                     </div>
 
                 </div>
-                <div class="pricing-card popular">
+                <div class="pricing-card popular wow animate__fadeInUpBig" data-wow-delay="0.2s">
 
 
                     <div class="card-top popular">
@@ -854,7 +880,7 @@
                     </div>
 
                 </div>
-                <div class="pricing-card dark">
+                <div class="pricing-card dark wow animate__fadeInUpBig" data-wow-delay="0.4s">
                     <div class="card-top dark">
                         <h3>Pro</h3>
                         <p class="desc">For pros who demand a killer arsenal to nail every lip-sync flawlessly.</p>
@@ -953,7 +979,7 @@
 
     <section class="container9">
         <div class="faq">
-            <h2 class="section2-heading">Frequently asked questions</h2>
+            <h2 class="section2-heading wow animate__fadeIn">Frequently asked questions</h2>
 
             <div class="layout">
                 <!-- FAQ Item 1 (Active by default based on screenshot) -->
@@ -1032,8 +1058,8 @@
             </div>
         </div>
     </section>
-    <footer class="footer-section">
-        <div class="main-footer">
+    <footer class="footer-section wow animate__fadeInUpBig">
+        <div class="main-footer ">
             <div class="child-footer">
                 <img class="target-image" src="images/footer-logo.png" alt="Footer Image">
             </div>
@@ -1066,6 +1092,10 @@
             </div>
         </div>
     </footer>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 
