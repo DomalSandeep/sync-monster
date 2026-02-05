@@ -11,7 +11,7 @@ $(window).scroll(function () {
 });
 
 
-
+//----------------------------------------Monthly plan and yearly plan section----------------------------------------
 // Use DOMContentLoaded to make sure elements are ready
 document.addEventListener('DOMContentLoaded', () => {
     const plans = document.querySelectorAll('.onclick-text');
@@ -30,6 +30,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//price change code
+    /**
+     * 2. The JavaScript function to handle the change
+     * @param {string} plan - 'monthly' or 'annual'
+     */
+    function updatePricing(plan) {
+        // Define your price values
+        const prices = {
+            monthly: {
+                blitz: "50",
+                pro: "175",
+                label: "/month"
+            },
+            annual: {
+                blitz: "38", // Example discounted price
+                pro: "133",  // Example discounted price
+                label: "/year"
+            }
+        };
+
+        // 3. Select the elements and update the text
+        document.getElementById('price-blitz').innerText = prices[plan].blitz;
+        document.getElementById('price-pro').innerText = prices[plan].pro;
+        
+        document.getElementById('duration-blitz').innerText = prices[plan].label;
+        document.getElementById('duration-pro').innerText = prices[plan].label;
+    }
 
 //--------------------------------------------------accordtion code
 
@@ -52,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
+//--------------------------------------------------accordtion code till here
 
 //Container 4
 
@@ -63,47 +90,62 @@ document.addEventListener('DOMContentLoaded', function () {
     const numberItems = document.querySelectorAll('.number-item');
     const prevBtn = document.querySelector('.slider-arrow.prev');
     const nextBtn = document.querySelector('.slider-arrow.next');
+    
     let currentSlide = 0;
+    let lastSlide = 0; // 1. Added variable to track previous state
     const totalSlides = slides.length;
 
-    // Function to update all slide positions
     function updateSlides() {
+        // 2. Determine direction based on index comparison
+        const direction = currentSlide >= lastSlide ? 'forward' : 'backward';
+
         slides.forEach((slide, index) => {
-            // Remove all state classes first
-            slide.classList.remove('active', 'next', 'prev');
+            // 3. Updated to remove the new direction classes
+            slide.classList.remove('active', 'next', 'prev', 'moving-forward', 'moving-backward');
 
             if (index === currentSlide) {
-                // Current active slide
                 slide.classList.add('active');
-            } else if (index === (currentSlide + 1) % totalSlides) {
-                // Next slide (peeking from right)
+                slide.classList.add(`moving-${direction}`); // 4. Apply direction class
+            } else if (index === currentSlide + 1) {
                 slide.classList.add('next');
-            } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
-                // Previous slide (hidden to left)
+            } else if (index === currentSlide - 1) {
                 slide.classList.add('prev');
             }
-            // All other slides remain hidden (no class)
         });
 
-        // Update number navigation
+        // Update numbers
         numberItems.forEach((item, index) => {
             item.classList.toggle('active', index === currentSlide);
         });
+
+        // UI OPTIMIZATION
+        if (prevBtn) {
+            prevBtn.style.opacity = currentSlide === 0 ? "0.3" : "1";
+            prevBtn.style.pointerEvents = currentSlide === 0 ? "none" : "auto";
+        }
+        if (nextBtn) {
+            nextBtn.style.opacity = currentSlide === totalSlides - 1 ? "0.3" : "1";
+            nextBtn.style.pointerEvents = currentSlide === totalSlides - 1 ? "none" : "auto";
+        }
+
+        // 5. Update lastSlide AFTER everything is done
+        lastSlide = currentSlide;
     }
 
-    // Next slide
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlides();
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlides();
+        }
     }
 
-    // Previous slide
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlides();
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlides();
+        }
     }
 
-    // Click on number navigation
     numberItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             currentSlide = index;
@@ -111,20 +153,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Arrow button clicks
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 
-    // Auto-play (optional - uncomment to enable)
-    // setInterval(nextSlide, 5000);
-
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') prevSlide();
         if (e.key === 'ArrowRight') nextSlide();
     });
 
-    // Initialize - set up first slide
     updateSlides();
 });
 
@@ -306,3 +342,48 @@ var wow = new WOW({
 wow.init();
 
 
+// Anmation on click flags
+// Select all elements that should trigger the animation
+const triggerElements = document.querySelectorAll('.trigger-anim');
+
+triggerElements.forEach(element => {
+    element.addEventListener('click', (e) => {
+        // 1. Create a new div
+        const circle = document.createElement('div');
+        
+        // 2. Add the animation class
+        circle.classList.add('expanding-circle');
+        
+        // 3. Append it to the body
+        document.body.appendChild(circle);
+        
+        // 4. Clean up: Remove the element after animation finishes (1.5s)
+        // This prevents the DOM from getting cluttered with hundreds of circles
+        setTimeout(() => {
+            circle.remove();
+        }, 1500);
+    });
+});
+
+
+// const pricingSection = document.querySelector('.container8');
+// const scrollableCards = document.querySelectorAll('.card-bottom');
+
+// window.addEventListener('scroll', () => {
+//     const rect = pricingSection.getBoundingClientRect();
+    
+//     // Check if the section has reached the top
+//     if (rect.top <= 100) {
+//         scrollableCards.forEach(card => {
+//             // Logic to check if cards are fully scrolled
+//             const isScrolledOut = card.scrollHeight - card.scrollTop === card.clientHeight;
+            
+//             if (isScrolledOut) {
+//                 // If cards finished scrolling, allow container to move
+//                 pricingSection.style.position = 'relative';
+//             } else {
+//                 pricingSection.style.position = 'sticky';
+//             }
+//         });
+//     }
+// });
