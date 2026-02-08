@@ -2153,7 +2153,18 @@ body {
     }
 }
 
+/* Container 8 */
+.container8 {
+    background-color: #EFE8E3;
+    padding-top: 115px;
+    padding-bottom: 100px;
+}
 
+.section2-heading {
+    text-align: center;
+    font-size: 32px;
+    /* margin: 170px 0 50px 0; */
+}
 /*Pricing section css*/
 .header-price {
     display: flex;
@@ -2167,16 +2178,17 @@ body {
    
     z-index: 1000; 
     background-color: #EFE8E3; 
-    padding: 20px 0; 
+    padding: 24px 0; 
 }
 
 .header-price-parent{
     width: 100%;
     background:#EFE8E3 ;
     position: sticky;
-        top: 65px;   margin-top: 50px;
-
-
+    top: 65px; 
+    margin-top: 100px;
+    z-index: 1;
+    transition: all 0.3s ease;
 }
 
 .pricing-cards {
@@ -2195,21 +2207,25 @@ body {
 }
 
 .pricing-card.free {
-    background-color: #EFE8E3;
-}
+  background-color: #EFE8E3;}
 
 .pricing-card.dark {
     color: white;
+      background: black;
 }
-
+.pricing-card.popular {
+  background-color: #F3DFDF;
+}
 .card-top.popular {
     background-color: #F3DFDF;
     border: #d85959 solid 1px;
+      border-bottom: 0px;
 }
 
 .card-bottom.popular {
     background-color: #F3DFDFCC;
     border: #d85959 solid 1px;
+      border-top: 0px;
 }
 
 .card-divider.popular {
@@ -2241,10 +2257,10 @@ body {
 .card-top {
     padding: 30px;
     border: #c1b6b6 solid 1px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     background: #F2EDE9;
     position: sticky;
-    
+    border-bottom: 0px;
     /* ADJUST THIS VALUE */
     /* If your header-price height is 100px, set this to 100px */
     top: 160px; 
@@ -2252,25 +2268,38 @@ body {
     z-index: 100;
 }
 
-.card-top::after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: calc(100% - 117px);
-    background: #F2EDE9;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
+
+
 
 .card-top.popular::after {
-    background: #F3DFDF;
+
+  border: #d85959 solid 1px;
+
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: -1px;  width: 100px;
+  height: 5px;
+  background-color: #EFE8E3;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(193, 182, 182);
+  border-radius: 5px 0px 0px 5px;
+  border-right: 0px;
+
+}
+.card-top.popular::before{
+      border: #d85959 solid 1px;
+      bottom: -7px;
+        border-left: 0px;
+}
+
+.card-top.dark::before{
+      left: -0.5px;
 }
 
 .card-top.dark::after {
-    background: black;
-
+    /* background: black; */
 }
 
 .card-top h3 {
@@ -2449,10 +2478,11 @@ body {
     background-color: #F2EDE9CC;
     margin: -1px 50px;
     border: 1px solid #F2EDE9;
+      z-index: 0;
 
 }
 
-.card-divider::after {
+/* .card-divider::after {
     content: "";
     position: absolute;
     top: 3px;
@@ -2464,28 +2494,47 @@ body {
     border: #c1b6b6 solid 1px;
     border-radius: 5px;
     clip-path: inset(0 50% 0 0);
-}
+} */
 
-.card-divider::before {
+.card-top::before {
     content: "";
     position: absolute;
-    top: 3px;
-    right: 94%;
-    width: 40px;
-    height: 6px;
+    bottom: -6px;
+    left: -1px;
+    width: 100px;
+    height: 5px;
     background-color: #EFE8E3;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     border: #c1b6b6 solid 1px;
-    border-radius: 5px;
-    clip-path: inset(0 0 0 50%);
+    border-left: 0px;
+    border-radius: 0px 5px 5px 0px;
+    /* clip-path: inset(0 0 0 50%); */
+    z-index: 10;
+}
+
+.card-top::after {
+content: "";
+  position: absolute;
+  bottom: -6px;
+  width: 100px;
+  height: 5px;
+  background-color: #EFE8E3;
+  border: #c1b6b6 solid 1px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(193, 182, 182);
+  border-radius: 5px 0px 0px 5px;
+  border-right: 0px;
+    right: -0.5px;
 }
 
 .card-bottom {
     padding: 30px;
     border: #c1b6b6 solid 1px;
-    border-radius: 5px;
+    border-top: 0px;
+    border-radius: 0px 0px 5px 5px;
     background: #F2EDE9CC;
-    margin-top: -2px;
+    margin-top: 6px;
 }
 
 .card-bottom ul {
@@ -2608,9 +2657,11 @@ body {
     .talk-to-us {
         display: none;
     }
+    .card-top {
+  z-index: 0;
+}
 }
 
-/*Container 6 CSS code till here*/
 
 /*Container 7 Css*/
 .testimonials {
@@ -2712,18 +2763,7 @@ body {
 
 
 
-/* Container 8 */
-.container8 {
-    background-color: #EFE8E3;
-    padding-top: 115px;
-    padding-bottom: 100px;
-}
 
-.section2-heading {
-    text-align: center;
-    font-size: 32px;
-    /* margin: 170px 0 50px 0; */
-}
 
 
 

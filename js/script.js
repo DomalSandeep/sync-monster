@@ -10,6 +10,7 @@ $(window).scroll(function () {
     else { sticky.removeClass('fixed-navbar'); }
 });
 
+console.log(window); 
 
 //----------------------------------------Monthly plan and yearly plan section----------------------------------------
 // Use DOMContentLoaded to make sure elements are ready
@@ -366,24 +367,69 @@ triggerElements.forEach(element => {
 });
 
 
-// const pricingSection = document.querySelector('.container8');
-// const scrollableCards = document.querySelectorAll('.card-bottom');
 
-// window.addEventListener('scroll', () => {
-//     const rect = pricingSection.getBoundingClientRect();
+
+
+//Jquery for scroll hijack monthly and annual plan section
+
+// $(document).ready(function() {
     
-//     // Check if the section has reached the top
-//     if (rect.top <= 100) {
-//         scrollableCards.forEach(card => {
-//             // Logic to check if cards are fully scrolled
-//             const isScrolledOut = card.scrollHeight - card.scrollTop === card.clientHeight;
-            
-//             if (isScrolledOut) {
-//                 // If cards finished scrolling, allow container to move
-//                 pricingSection.style.position = 'relative';
-//             } else {
-//                 pricingSection.style.position = 'sticky';
-//             }
-//         });
+//     $(window).scroll(function() {
+//         var header = $('.header-price-parent');
+//         var cards = $('.pricing-cards');
+        
+//         // Get positions
+//         var cardsBottom = cards.offset().top + cards.outerHeight();
+//         var scrollPos = $(window).scrollTop();
+//         var releasePoint = cardsBottom - 350 - header.outerHeight();
+        
+//         // Release sticky when cards finish scrolling
+//         if (scrollPos >= releasePoint) {
+//             header.css({
+//                 'position': 'absolute',
+//                 'top': releasePoint + 'px'
+//             });
+
+//             console.log("work if")
+//         } else {
+//             header.css({
+//                 'position': 'sticky',
+//                 'top': '65px'
+//             });
+
+//           console.log("work else")
+
+//         }
+//     });
+    
+// });
+
+
+// window.addEventListener('scroll', function() {
+//     const headerPriceParent = document.querySelector('.header-price-parent');
+//     const container8 = document.querySelector('.container8');
+//     const pricingcard = document.querySelectorAll('.pricing-card') ; 
+
+    
+//     if (!headerPriceParent || !container8) return;
+    
+//     const containerRect = container8.getBoundingClientRect();
+//     const headerHeight = headerPriceParent.offsetHeight;
+    
+   
+//     if (containerRect.top < -1000) { 
+//         headerPriceParent.style.position = 'absolute';
+//         headerPriceParent.style.top = '10px'; 
+//         pricingcard.style.height = "458px"
+//         pricingcard.style.overflow = "hidden"
+
+//          console.log("work if")
+    
+//     } else {
+//         headerPriceParent.style.position = 'sticky';
+//         headerPriceParent.style.top = '65px';
+
+//         console.log("work else")
+
 //     }
 // });
